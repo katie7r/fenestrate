@@ -1,139 +1,80 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
+  <title>Framed</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- <link rel="shortcut icon" href="./favicon.ico" /> -->
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-  <title>TESTING</title>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/skeleton.custom.css">
+  <link rel="stylesheet" href="css/css.css">
 
-  <style>
-    div {
-      float: left;
-    }
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
 
-    input:not(#url) {
-      width: 5ex;
-    }
-
-    hr {
-      visibility: hidden;
-      float: none;
-      clear: both;
-    }
-  </style>
 </head>
-
 <body>
 
-<h1>
-  URL:
-  <input type="text" id="url" value="/agent" />
-  <button id="destination" onClick="updateIframeSrcs()">Go</button>
-</h1>
+  <!-- Navigation
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="navbar-spacer"></div>
+  <nav class="navbar">
+    <div class="container">
+      <ul class="navbar-list">
+        <li class="navbar-item">
+          <a class="navbar-link" href="/">
+            <h2 class="title">Framed <!-- or something --></h2>
+          </a>
+        </li>
+        <li class="navbar-item">
+          <a class="navbar-link" href="./">Copycat</a>
+        </li>
+        <li class="navbar-item">
+          <a class="navbar-link" href="#">Compare</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-<hr />
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="row">
+    <div class="one-half column" style="margin-top: 25%">
+      <h4>Framed (or Something)</h4>
+      <p>
+        This is a basic tool I created to (more) quickly and easily test sites across a device sizes simultaneously.
+      </p>
+    </div>
+  </div>
 
-<div>
-  <h2>iPhone 6 <small>(375 x 667)</small></h2>
-  <iframe src="http://127.0.0.1:4000" width="375" height="667"></iframe>
-</div>
-<div>
-  <h2>iPhone 5 <small>(320 x 568)</small></h2>
-  <iframe src="http://127.0.0.1:4000" width="320" height="568"></iframe>
-</div>
-<div>
-  <h2>&lt; XS <small>(320 x 527)</small></h2>
-  <iframe src="http://127.0.0.1:4000" width="320" height="527"></iframe>
-</div>
-<div>
-  <h2>Tiny <small>(320 x 480)</small></h2>
-  <iframe src="http://127.0.0.1:4000" width="320" height="480"></iframe>
-</div>
+  <div class="container">
 
-<hr />
 
-<div>
-  <h2>Large <small>(767 x 569)</small></h2>
-  <iframe src="http://127.0.0.1:4000" width="767" height="569"></iframe>
-</div>
+  </div>
 
-<div>
-  <h2>
-    Flexible 1
-    <small>
-      (
-      <input type="text" id="width" value="375" />
-      x
-      <input type="text" id="height" value="667" />
-      <button id="dimensions" onclick="updateIframeDimensions()">Update</button>
-      )
-    </small>
-  </h2>
-  <iframe src="http://127.0.0.1:4000" width="375" height="667" id="flexible"></iframe>
-</div>
 
-<div>
-  <h2>
-    Flexible 2
-    <small>
-      (
-      <input type="text" id="width" value="320" />
-      x
-      <input type="text" id="height" value="567" />
-      <button id="dimensions" onclick="updateIframeDimensions()">Update</button>
-      )
-    </small>
-  </h2>
-  <iframe src="http://127.0.0.1:4000" width="320" height="567" id="flexible"></iframe>
-</div>
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="js/js.js"></script> <!-- ...because naming things is hard. -->
 
-<hr />
 
-<div>
-  <h2>iPad <small>(768 x 1024)</small></h2>
-  <iframe src="http://127.0.0.1:4000" width="768" height="1024"></iframe>
-</div>
-
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script> -->
-<script>
-function setIframeSrcs(src) {
-  var iframes = document.getElementsByTagName("iframe");
-  for(var i = 0; i < iframes.length; i++) {
-    var iframe = iframes[i];
-    iframe.setAttribute("src", src);
-  }
-}
-
-function updateIframeSrcs() {
-  var url = document.getElementById("url");
-  var src = "http://127.0.0.1:4000" + url.value;
-
-  console.log("Updating iframe srcs to " + src);
-
-  setIframeSrcs(src);
-}
-
-function updateIframeDimensions() {
-  var iframe = document.getElementById("flexible");
-  var width = document.getElementById("width");
-  var height = document.getElementById("height");
-
-  console.log("Updating iframe dimensions to " + width + " x " + height);
-
-  iframe.setAttribute("width", width.value);
-  iframe.setAttribute("height", height.value);
-}
-
-(function() {
-  var port = "4000";
-  var defaultSrc = "http://127.0.0.1:" + port + "/";
-
-  setIframeSrcs(defaultSrc);
-})
-</script>
-
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>
