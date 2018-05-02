@@ -1,5 +1,66 @@
+/* GENERAL */
+
+body {
+  padding-bottom: 3rem;
+}
+
+.navbar {
+  margin-bottom: 1rem;
+}
+
 .navbar-link .title {
   display: inline-block;
   margin-bottom: 0;
   line-height: 6.5rem;
+}
+
+.flex.row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  /* align-items: flex-start;
+  align-content: flex-start; */
+}
+
+.flex.row .column {
+  width: auto;
+  /* flex: 0 1 auto;
+  align-self: flex-start; */
+}
+
+button.xs {
+  padding: 0 10px;
+  height: 28px;
+  line-height: 28px;
+}
+
+button.sm {
+  padding: 0 20px;
+  height: 32px;
+  line-height: 32px;
+}
+
+/* SPECIFIC */
+
+#src {
+  width: calc(100% - 140px);
+}
+
+.devices {
+  margin-top: 5rem;
+}
+
+.devices h6 small {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+button.rotate {
+  float: right;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+#compare {
+  display: none;
 }
