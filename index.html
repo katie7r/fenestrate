@@ -65,15 +65,30 @@
 
   <div id="copycat" class="page">
     <section class="container">
-      <h3>Copycat</h3>
+      <!-- <h3>Copycat</h3> -->
       <p>
-        This feature enables <!-- the creation and control of --> multiple iframes, with the ability to manage <!-- size and --> orientation for each, and to set and refresh window location for all.
+        This feature enables <!-- the creation and control of --> multiple iframes <!-- , --> with the ability to manage <!-- size and --> orientation <!-- for each, --> and to set and refresh window location <!-- for all -->.
       </p>
       <input id="src" class="u-pull-left" type="text" value="//127.0.0.1:4001">
       <button id="set-src" class="u-pull-right button-primary">Update</button>
     </section>
 
-    <section class="devices hero flex row"></section>
+    <section class="devices hero flex row">
+      <div class="custom device column">
+        <h6>Custom
+          <button class="rotate xs">~</button>
+        </h6>
+        <p>
+          <input type="number" class="custom-width" value="320"/>
+          x
+          <input type="number" class="custom-height" value="640"/>
+          <button class="button-primary set-custom u-full-width">Set</button>
+        </p>
+        <iframe style="display: none;"></iframe>
+      </div>
+
+      <!-- devices added here via js -->
+    </section>
   </div>
 
   <div id="compare" class="page container">
