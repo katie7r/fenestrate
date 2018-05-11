@@ -1,6 +1,13 @@
 (function() {
 
-  $(document).ready(frame);
+
+  $(document).ready(function() {
+    window.onbeforeunload = function() {
+      return 'Are you sure? You\'ll lose any changes you\'ve made.'
+    };
+
+    frame();
+  });
 
   $(window).on('hashchange', route);
 
@@ -89,6 +96,8 @@
 
   function setSrc(event) {
     event.stopPropagation();
-    $('iframe').prop('src', $('#src').val());
+    $('iframe')
+      .prop('src', '')
+      .prop('src', $('#src').val());
   }
 })();
