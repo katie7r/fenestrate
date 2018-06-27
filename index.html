@@ -26,7 +26,7 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="images/favicon.png?v=1">
 
 </head>
 <body>
@@ -71,14 +71,19 @@
       </p>
       <input id="src" class="u-pull-left" type="text" value="//127.0.0.1:4001">
       <button id="set-src" class="u-pull-right button-primary">Update</button>
+
+      <button id="rotate-all" class="xs u-pull-right">~*</button>
     </section>
 
     <section class="devices hero flex row">
       <div class="custom device column">
-        <h6>Custom
+        <h6>
+          Custom
           <button class="rotate xs">~</button>
         </h6>
+
         <iframe style="display: none;"></iframe>
+
         <p>
           <input type="number" class="custom-width" value="320"/>
           x

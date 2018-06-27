@@ -41,6 +41,80 @@ button.sm {
   line-height: 32px;
 }
 
+/* button.button-primary {
+  background-color: #4156A6;
+  border-color: #4156A6;
+}
+
+button.button-primary:hover {
+  background-color: #859AEA;
+  border-color: #859AEA;
+}
+
+a,
+.navbar-link.active {
+  color: #4156A6;
+}
+
+a:hover,
+.navbar-link.active:hover {
+  color: #859AEA;
+} */
+
+/* button.button-primary {
+  background-color: #B40055;
+  border-color: #B40055;
+}
+
+button.button-primary:hover {
+  background-color: #AA004B;
+  border-color: #AA004B;
+}
+
+a,
+.navbar-link.active {
+  color: #B40055;
+}
+
+a:hover,
+.navbar-link.active:hover {
+  color: #AA004B;
+} */
+
+button.button-primary {
+  background-color: #794387;
+  border-color: #794387;
+}
+
+button.button-primary:hover,
+button.button-primary:focus {
+  background-color: #6A2A6E;
+  border-color: #6A2A6E;
+}
+
+a,
+.navbar-link.active {
+  color: #794387;
+}
+
+a:hover,
+.navbar-link.active:hover {
+  color: #6A2A6E;
+}
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #794387;
+}
+
+
 /* SPECIFIC */
 
 #src {

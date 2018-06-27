@@ -13,9 +13,12 @@
 
   // TODO allow adding, removing, and refreshing frames
   $(document)
-    .on('click', '.rotate', rotate)
+    .on('keydown', handleKeydown)
+    .on('click', '.rotate', rotateOne)
+    .on('click', '#rotate-all', rotateAll)
     .on('click', '.set-custom', setCustom)
-    .on('click', '#set-src', setSrc);
+    .on('click', '#set-src', setSrc)
+    ;
 
   function frame() {
     var $row = $('.devices.row');
@@ -47,15 +50,34 @@
     });
   }
 
-  function rotate(event) {
-    var height, width,
-      $iframe = $(event.target).closest('.device').find('iframe');
+  function handleKeydown(event) {
+    if (event.key === 'Enter' && $('#src').is(':focus')) {
+      setSrc(event);
+    }
+  }
+
+  function rotate($iframe) {
+    console.log($iframe);
+
+    var height, width;
 
     height = $iframe.prop('height');
     width  = $iframe.prop('width');
 
     $iframe.prop('height', width);
     $iframe.prop('width', height);
+    // $iframe.data('rotated', !$iframe.data('rotated')); // TODO something like this
+  }
+
+  function rotateOne(event) {
+    var $iframe = $(event.target).closest('.device').find('iframe');
+    rotate($iframe);
+  }
+
+  function rotateAll(event) {
+    $('iframe').each(function(idx, iframe) {
+      rotate($(iframe));
+    });
   }
 
   function route(event) {
